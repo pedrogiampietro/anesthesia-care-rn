@@ -1,0 +1,173 @@
+import { colors } from '../theme';
+import type { CalculatorCardData, DrugCategory, Infusion, VentilationMetric } from './types';
+
+export const drugCategories: DrugCategory[] = [
+  {
+    key: 'induction',
+    title: 'Indução',
+    subtitle: 'Propofol, etomidato',
+    accentColor: colors.primaryContainer,
+    backgroundColor: colors.primaryContainer,
+    textColor: colors.onPrimary,
+    icon: 'vaccines',
+    target: 'propofol',
+  },
+  {
+    key: 'opioids',
+    title: 'Opioides',
+    subtitle: 'Fentanil, remifentanil',
+    accentColor: colors.secondary,
+    backgroundColor: colors.secondaryContainer,
+    textColor: colors.onSecondaryContainer,
+    icon: 'medication',
+  },
+  {
+    key: 'blockers',
+    title: 'Bloqueadores Neuromusculares',
+    subtitle: 'Rocurônio, succinilcolina',
+    accentColor: colors.tertiary,
+    backgroundColor: colors.tertiaryContainer,
+    textColor: colors.onTertiaryContainer,
+    icon: 'psychology',
+    fullWidth: true,
+  },
+  {
+    key: 'infusions',
+    title: 'Infusões',
+    subtitle: 'Bomba de seringa',
+    accentColor: colors.warning,
+    backgroundColor: colors.errorContainer,
+    textColor: colors.onErrorContainer,
+    icon: 'water-drop',
+    target: 'infusions',
+  },
+  {
+    key: 'vasopressors',
+    title: 'Vasopressores',
+    subtitle: 'Noradrenalina',
+    accentColor: colors.error,
+    backgroundColor: colors.surfaceContainerHighest,
+    textColor: colors.onSurface,
+    icon: 'favorite',
+  },
+  {
+    key: 'ventilation',
+    title: 'Ventilação',
+    subtitle: 'Parâmetros respiratórios',
+    accentColor: colors.success,
+    backgroundColor: colors.surfaceContainerLow,
+    textColor: colors.onSurface,
+    icon: 'air',
+    target: 'ventilation',
+  },
+];
+
+export const calculators: CalculatorCardData[] = [
+  {
+    key: 'propofol',
+    title: 'Dose de Propofol',
+    subtitle: 'Dose total e volume em mL para indução.',
+    accentColor: colors.primaryContainer,
+    icon: 'calculate',
+    target: 'propofol',
+  },
+  {
+    key: 'ventilation',
+    title: 'Ventilação Mecânica',
+    subtitle: 'VT, VM, driving pressure e FiO2 sugerida.',
+    accentColor: colors.secondary,
+    icon: 'air',
+    target: 'ventilation',
+  },
+  {
+    key: 'infusions',
+    title: 'Infusões Ativas',
+    subtitle: 'Painel rápido para drogas em bomba.',
+    accentColor: colors.tertiary,
+    icon: 'monitor-heart',
+    target: 'infusions',
+  },
+];
+
+export const propofolDosePresets = [1.5, 2, 2.5];
+
+export const activeInfusions: Infusion[] = [
+  {
+    name: 'Propofol',
+    classLabel: 'Hipnótico',
+    rateValue: 6,
+    rateUnit: 'mg/kg/h',
+    concentration: '10 mg/mL',
+    accentColor: colors.primaryContainer,
+    tintColor: colors.primaryFixed,
+    icon: 'vaccines',
+  },
+  {
+    name: 'Remifentanil',
+    classLabel: 'Opioide',
+    rateValue: 0.1,
+    rateUnit: 'mcg/kg/min',
+    concentration: '50 mcg/mL',
+    accentColor: colors.tertiary,
+    tintColor: colors.tertiaryContainer,
+    icon: 'medication',
+  },
+  {
+    name: 'Dexmedetomidina',
+    classLabel: 'Alfa-2 agonista',
+    rateValue: 0.5,
+    rateUnit: 'mcg/kg/h',
+    concentration: '4 mcg/mL',
+    accentColor: colors.secondary,
+    tintColor: '#efe6ff',
+    icon: 'spa',
+  },
+];
+
+export const ventilationMetrics: VentilationMetric[] = [
+  {
+    key: 'vt',
+    title: 'Volume Corrente Ideal (VT)',
+    value: '420',
+    unit: 'mL',
+    supporting: '6,0 mL/kg',
+    accentColor: colors.primary,
+    icon: 'air',
+  },
+  {
+    key: 'vm',
+    title: 'Ventilação Minuto (VM)',
+    value: '6,5',
+    unit: 'L/min',
+    supporting: 'Faixa normal',
+    accentColor: colors.secondary,
+    icon: 'speed',
+  },
+  {
+    key: 'dp',
+    title: 'Driving Pressure',
+    value: '12',
+    unit: 'cmH2O',
+    supporting: 'Alvo < 15 cmH2O',
+    accentColor: colors.tertiary,
+    icon: 'compress',
+  },
+  {
+    key: 'compliance',
+    title: 'Compliance Estática',
+    value: '45',
+    unit: 'mL/cmH2O',
+    supporting: 'Estável',
+    accentColor: colors.success,
+    icon: 'monitor-heart',
+  },
+  {
+    key: 'fio2',
+    title: 'FiO2 Sugerida',
+    value: '40',
+    unit: '%',
+    supporting: 'SpO2 alvo > 94%',
+    accentColor: colors.warning,
+    icon: 'airline-seat-flat',
+  },
+];
